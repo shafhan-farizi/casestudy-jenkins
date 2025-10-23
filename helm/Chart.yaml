@@ -1,3 +1,4 @@
 apiVersion: v2
-name: casestudy-jenkins1
+name: study-case
 version: 0.1.0
+
