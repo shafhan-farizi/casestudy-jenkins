@@ -1,4 +1,5 @@
 image:
-  repository: azeshion21/demo-app
+  repository: shafhan/study-case
   tag: latest
 replicaCount: 1
+
