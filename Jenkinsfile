@@ -39,7 +39,7 @@ pipeline {
              // echo "$PASS" | docker login -u "$USER" --password-stdin
              // docker push ${IMAGE}:${TAG}
             //"""
-            sh 'docker build -t shafhan/jma:2.0 .'
+            sh 'docker build -t \${IMAGE}:\${TAG} .'
             sh "echo \$PASS | docker login -u \$USER --password-stdin"
             sh 'docker push shafhan/jma:2.0'
           }
@@ -74,6 +74,7 @@ pipeline {
     }
   }
 }
+
 
 
 
