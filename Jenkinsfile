@@ -18,6 +18,13 @@ pipeline {
     HELM_RELEASE = "study-case"
   }
 
+  stage('Test Docker Access') {
+          steps {
+            sh 'docker inspect -f . docker:latest'
+            sh 'docker ps -a' // Uji akses daemon
+      }
+  }
+
   stages {
     stage('Checkout Source Code') {
       steps {
@@ -79,6 +86,7 @@ pipeline {
     }
   }
 }
+
 
 
 
