@@ -35,10 +35,13 @@ pipeline {
         )]) {
           script {
             echo "📦 Pushing image to DockerHub..."
-            sh """
-              echo "$PASS" | docker login -u "$USER" --password-stdin
-              docker push ${IMAGE}:${TAG}
-            """
+            //sh """
+             // echo "$PASS" | docker login -u "$USER" --password-stdin
+             // docker push ${IMAGE}:${TAG}
+            //"""
+            sh 'docker build -t shafhan/jma:2.0 .'
+            sh "echo \$PASS | docker login -u \$USER --password-stdin"
+            sh 'docker push shafhan/jma:2.0'
           }
         }
       }
@@ -71,6 +74,7 @@ pipeline {
     }
   }
 }
+
 
 
 
