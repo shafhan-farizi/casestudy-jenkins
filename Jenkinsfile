@@ -20,11 +20,11 @@ pipeline {
 
   stages {
     stage('Test Docker Access') {
-          steps {
-            sh 'docker inspect -f . docker:latest'
-            sh 'docker ps -a' // Uji akses daemon
+      steps {
+        sh 'docker inspect -f . docker:latest'
+        sh 'docker ps -a' // Uji akses daemon
       }
-  }
+    }
     
     stage('Checkout Source Code') {
       steps {
@@ -86,6 +86,7 @@ pipeline {
     }
   }
 }
+
 
 
 
