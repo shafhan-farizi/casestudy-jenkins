@@ -1,13 +1,5 @@
 pipeline {
-  agent {
-    docker { 
-            // Menggunakan image yang memiliki Docker CLI (misalnya, image Docker resmi)
-            image 'docker:latest' 
-            // Memetakan Docker Socket host ke dalam container agent
-            // Ini memberi izin container agen untuk menggunakan daemon Docker host
-            args '-v /var/run/docker.sock:/var/run/docker.sock' 
-        }
-  }
+  agent any
 
   environment {
     IMAGE = "shafhan/study-case"
@@ -86,6 +78,7 @@ pipeline {
     }
   }
 }
+
 
 
 
