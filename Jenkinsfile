@@ -11,13 +11,6 @@ pipeline {
   }
 
   stages {
-    stage('Test Docker Access') {
-      steps {
-        sh 'docker inspect -f . docker:latest'
-        sh 'docker ps -a' // Uji akses daemon
-      }
-    }
-    
     stage('Checkout Source Code') {
       steps {
         git url: 'https://github.com/shafhan-farizi/casestudy-jenkins.git', branch: 'main'
@@ -78,6 +71,7 @@ pipeline {
     }
   }
 }
+
 
 
 
